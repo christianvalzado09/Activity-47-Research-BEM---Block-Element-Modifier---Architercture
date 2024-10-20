@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 47: Research BEM - Block, Element, Modifier - Architercture</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: pink; /* Light gray background */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        /* Container for Profile Cards */
+        .profile-card-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        /* Block: Profile Card */
+        .profile-card {
+            background-color: #2c3e50; /* Dark blue for card */
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            width: 300px;
+            margin: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Element: Profile Image */
+        .profile-card__image {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            margin-top: 15px;
+        }
+
+        /* Element: Profile Name */
+        .profile-card__name {
+            font-size: 22px;
+            font-weight: bold;
+            margin: 10px 0 5px;
+            color: #ffffff; /* White text color */
+        }
+
+        /* Element: Profession */
+        .profile-card__profession {
+            color: #bdc3c7; /* Light gray text color */
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        /* Element: Profile Card Body */
+        .profile-card__body {
+            display: flex; /* Change to flex display */
+            flex-direction: column; /* Stack elements vertically */
+            justify-content: space-between; /* Align items within the space */
+            align-items: center; /* Center items horizontally */
+            padding: 10px; /* Optional padding */
+        }
+
+        /* Element: Description */
+        .profile-card__description {
+            font-size: 14px;
+            color: #ecf0f1; /* Very light gray for description */
+            margin: 0 10px 15px;
+        }
+
+        /* Element: Button */
+        .profile-card__button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
+            margin: 5px;
+            background-color: #0000FF; /* Orange for button */
+            color: white; /* White text for button */
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+
+        /* Hover effects for buttons */
+        .profile-card__button:hover {
+            background-color: #d35400; /* Darker orange on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-card-container">
+        <div class="profile-card">
+            <div class="profile-card__header">
+                <img src="https://scontent.fmnl14-1.fna.fbcdn.net/v/t39.30808-6/454582003_1290003579075964_5828748943921642642_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeHHYz2sO4RQpRy7-xX0qDRzf3Nq2r6tc3J_c2ravq1zcuHtGCeTtAP62BmpMIR9gOFDXxF1AI6D7_kRJ2BPMVHV&_nc_ohc=ZJfnFVJtNPoQ7kNvgFsF79G&_nc_ht=scontent.fmnl14-1.fna&_nc_gid=AqRYSqB011OaHJUtfTsqMkk&oh=00_AYBw91gXPw7D5zaw6Eni49HLja3nYaSm7c9C5LORJa_vtQ&oe=671A5FD1" alt="Christian Valzado" class="profile-card__image">
+                <h1 class="profile-card__name">Christian Valzado</h1>
+                <p class="profile-card__profession">Web Developer</p>
+            </div>
+            <div class="profile-card__body">
+                <p class="profile-card__description">
+                    A passionate web developer who enjoys building interactive applications and exploring the latest technologies.
+                </p>
+                <button class="profile-card__button">Wanna know about me?</button>
+            </div>
+        </div>
+
+        <div class="profile-card">
+            <div class="profile-card__header">
+                <img src="https://scontent.fmnl32-1.fna.fbcdn.net/v/t39.30808-6/371087671_992768568708452_1602173958302127036_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeF4L06_pY_ggQqIuVob9Ts8ebQRuWDk0j95tBG5YOTSP4O9xagpUVxF0FrQBQH9MurjtJ41OUVEEJa_BPHyFFY3&_nc_ohc=Y0KZ0aFSJP4Q7kNvgFH4KPu&_nc_ht=scontent.fmnl32-1.fna&_nc_gid=A8J4-r0QHrwlczT-McPaZve&oh=00_AYDJm4OcY49gFR0ppgOulJ-5KmZk3eSlRJvFOWiVL0tstg&oe=671A8394" alt="Fher Valzado" class="profile-card__image">
+                <h1 class="profile-card__name">Fher Valzado</h1>
+                <p class="profile-card__profession">Programmer</p>
+            </div>
+            <div class="profile-card__body">
+                <p class="profile-card__description">
+                    An experienced programmer with a knack for solving complex problems and writing clean, efficient code.
+                </p>
+                <button class="profile-card__button">Wanna know about me?</button>
+            </div>
+        </div>
+
+        <div class="profile-card">
+            <div class="profile-card__header">
+                <img src="https://scontent.fmnl14-1.fna.fbcdn.net/v/t39.30808-6/376709397_1442270243220380_6463233267841524733_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHcQlES70LWyonFNm6yQXy_sZKSYpeTyWexkpJil5PJZytGN7SFaIekLnwT0ZYmGkViFdI1TW0_H4H2V7qqofhm&_nc_ohc=-SYAHDMeZmsQ7kNvgFzY7m3&_nc_ht=scontent.fmnl14-1.fna&_nc_gid=Axf1vB3cnBBfOQ8669ov20J&oh=00_AYD0Pd8B05Q5LnQ0_TTrf8quns6xKsWePOLu1ZXKD1KrRQ&oe=671A705A" alt="Carlo Darunday" class="profile-card__image">
+                <h1 class="profile-card__name">Carlo Darunday</h1>
+                <p class="profile-card__profession">Designer</p>
+            </div>
+            <div class="profile-card__body">
+                <p class="profile-card__description">
+                    A creative designer specializing in user experience and user interface design.
+                </p>
+                <button class="profile-card__button">Wanna know about me?</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
